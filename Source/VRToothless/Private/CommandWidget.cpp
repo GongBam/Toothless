@@ -45,5 +45,4 @@ void UCommandWidget::ReturnMenu()
 	{
 		tm->HideGameUI();
 	}
-
 }

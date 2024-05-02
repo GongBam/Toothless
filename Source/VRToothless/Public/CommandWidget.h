@@ -44,7 +44,4 @@ private:
 
 	UFUNCTION()
 	void ReturnMenu();
-
-
-
 };
