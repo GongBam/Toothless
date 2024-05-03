@@ -3,14 +3,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/GameModeBase.h"
-#include "ToothlessModeBase.generated.h"
+#include "Blueprint/UserWidget.h"
+#include "CoupangWidget.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class VRTOOTHLESS_API AToothlessModeBase : public AGameModeBase
+class VRTOOTHLESS_API UCoupangWidget : public UUserWidget
 {
 	GENERATED_BODY()
+	
 };
