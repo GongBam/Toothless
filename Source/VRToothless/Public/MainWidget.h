@@ -14,14 +14,17 @@ class VRTOOTHLESS_API UMainWidget : public UUserWidget
 {
 	GENERATED_BODY()
 
-public:
-	UPROPERTY(EditDefaultsOnly, Category ="VR", meta = (BindWidget))
-	class UTextBlock* text_currentMoney;
-	
-	UPROPERTY(EditDefaultsOnly, Category ="VR", meta = (BindWidget))
-	class UTextBlock* text_currentHappy;
+//현재 소지금을 표시한다.
 
-	
-	void ShowCurrentMoneyText(bool bShow);
-	
+
+//현재 플레이타임을 표시한다.
+
+
+//지금까지 한 명령어들의 횟수를 표시한다.
+
+
+//소지한 물과 식량을 표시한다.
+
+
+
 };
