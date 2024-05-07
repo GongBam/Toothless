@@ -25,7 +25,7 @@ void UCommandWidget::NativeConstruct()
 
 void UCommandWidget::Sit()
 {
-
+	
 }
 
 void UCommandWidget::Fly()

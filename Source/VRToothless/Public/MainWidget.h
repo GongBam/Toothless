@@ -14,17 +14,21 @@ class VRTOOTHLESS_API UMainWidget : public UUserWidget
 {
 	GENERATED_BODY()
 
-//현재 소지금을 표시한다.
 
+public:
+	//현재 소지금을 표시한다.
+	int32 currentMoney = 0;
 
-//현재 플레이타임을 표시한다.
+	//현재 플레이타임을 표시한다.
+	float playTime = 0;
 
+	//지금까지 한 명령어들의 횟수를 표시한다.
+	int32 SitCount = 0;
+	int32 BangCount = 0;
+	int32 FlyCount = 0;
 
-//지금까지 한 명령어들의 횟수를 표시한다.
-
-
-//소지한 물과 식량을 표시한다.
-
-
+	//소지한 물과 식량을 표시한다.
+	int32 GetWater = 0;
+	int32 GetFood = 0;
 
 };
