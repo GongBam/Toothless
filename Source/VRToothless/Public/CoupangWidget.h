@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -13,5 +11,41 @@ UCLASS()
 class VRTOOTHLESS_API UCoupangWidget : public UUserWidget
 {
 	GENERATED_BODY()
+
+
+public:
+
+	UPROPERTY(EditDefaultsOnly, Category= "VR", meta = (BindWidget))
+	class UButton* btn_buyWater;
+
+	UPROPERTY(EditDefaultsOnly, Category = "VR", meta = (BindWidget))
+	class UButton* btn_buyMeet;
+
+	UPROPERTY(EditDefaultsOnly, Category = "VR", meta = (BindWidget))
+	class UButton* btn_buyBrush;
+
+	UPROPERTY(EditDefaultsOnly, Category = "VR", meta = (BindWidget))
+	class UButton* btn_buySponge;
+
+	UPROPERTY(EditDefaultsOnly, Category = "VR", meta = (BindWidget))
+	class UButton* btn_buyShampoo;
+
+
+private:
+
+	UFUNCTION()
+	void BuyWater();
+
+	UFUNCTION()
+	void BuyMeet();
+
+	UFUNCTION()
+	void BuyBrush();
+
+	UFUNCTION()
+	void BuySponge();
+
+	UFUNCTION()
+	void BuyShampoo();
 	
 };
