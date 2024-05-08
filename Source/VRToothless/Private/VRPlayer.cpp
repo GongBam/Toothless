@@ -14,7 +14,8 @@ AVRPlayer::AVRPlayer()
 void AVRPlayer::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	APlayerController* pc = GetController<APlayerController>();
 }
 
 
