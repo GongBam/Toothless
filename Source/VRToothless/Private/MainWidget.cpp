@@ -2,33 +2,19 @@
 
 
 #include "MainWidget.h"
+#include "Components/TextBlock.h"
 
-// void UMainWidget::AddMoney(int32 Count)
+// void UMainWidget::ShowMainUI(bool bShow)
 // {
-// 	currentMoney=currentMoney + Count;
-// }
+// 	if (bShow)
+// 	{
+// 		text_currentMoney->SetVisibility(ESlateVisibility::Visible);
+// 		text_currentMoneyText->SetVisibility(ESlateVisibility::Visible);
+// 	}
+// 	else
+// 	{
+// 		text_currentMoney->SetVisibility(ESlateVisibility::Hidden);
+// 		text_currentMoneyText->SetVisibility(ESlateVisibility::Hidden);
+// 	}
 // 
-// void UMainWidget::AddSitCount(int32 Count)
-// {
-// 	SitCount+=Count;
-// }
-// 
-// void UMainWidget::AddBangCount(int32 Count)
-// {
-// 	BangCount+=Count;
-// }
-// 
-// void UMainWidget::AddFlyCount(int32 Count)
-// {
-// 	FlyCount+=Count;
-// }
-// 
-// void UMainWidget::AddWater(int32 Count)
-// {
-// 	GetWater+=Count;
-// }
-// 
-// void UMainWidget::AddFood(int32 Count)
-// {
-// 	GetFood+=Count;
 // }
