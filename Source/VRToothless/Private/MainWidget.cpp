@@ -21,5 +21,4 @@ void UMainWidget::NativeConstruct()
 void UMainWidget::SetHappyBar(float value)
 {
 	pb_HappyBar->SetPercent(value);
-	
 }

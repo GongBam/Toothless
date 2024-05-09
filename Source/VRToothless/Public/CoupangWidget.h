@@ -12,40 +12,46 @@ class VRTOOTHLESS_API UCoupangWidget : public UUserWidget
 {
 	GENERATED_BODY()
 
+protected:
+	virtual void NativeConstruct() override;
 
 public:
-
-	UPROPERTY(EditDefaultsOnly, Category= "VR", meta = (BindWidget))
-	class UButton* btn_buyWater;
-
-	UPROPERTY(EditDefaultsOnly, Category = "VR", meta = (BindWidget))
-	class UButton* btn_buyMeet;
-
-	UPROPERTY(EditDefaultsOnly, Category = "VR", meta = (BindWidget))
-	class UButton* btn_buyBrush;
-
-	UPROPERTY(EditDefaultsOnly, Category = "VR", meta = (BindWidget))
-	class UButton* btn_buySponge;
-
-	UPROPERTY(EditDefaultsOnly, Category = "VR", meta = (BindWidget))
-	class UButton* btn_buyShampoo;
-
-
-private:
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UButton* btn_Food1;
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UButton* btn_Food2;
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UButton* btn_Food3;
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UButton* btn_Water1;
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UButton* btn_Water2;
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UButton* btn_Water3;
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UButton* btn_Brush1;
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UButton* btn_Brush2;
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UButton* btn_Brush3;
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UButton* btn_Shampoo1;
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UButton* btn_Shampoo2;
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UButton* btn_Shampoo3;
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UButton* btn_Bowl1;
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UButton* btn_Bowl2;
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UButton* btn_Bowl3;
 
 	UFUNCTION()
-	void BuyWater();
-
+	void BuyC();
 	UFUNCTION()
-	void BuyMeet();
-
+	void BuyB();
 	UFUNCTION()
-	void BuyBrush();
-
-	UFUNCTION()
-	void BuySponge();
-
-	UFUNCTION()
-	void BuyShampoo();
+	void BuyA();
 	
 };

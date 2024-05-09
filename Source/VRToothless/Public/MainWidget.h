@@ -22,6 +22,7 @@ public:
 	UPROPERTY(EditAnywhere, Category = "UI", meta = (BindWidget))
 	class UTextBlock* text_currentMoneyText;
 
+	UPROPERTY(EditAnywhere, Category = "UI", meta = (BindWidget))
 	int32 Money = 99999999;
 
 	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
