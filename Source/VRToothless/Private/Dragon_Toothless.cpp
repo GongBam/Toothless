@@ -25,9 +25,7 @@ void ADragon_Toothless::BeginPlay()
 	Super::BeginPlay();
 
 	// 기본 상태를 idle 상태로 설정 초기화 한다.
-	dragonState = EDragonState::IDLE;
-
-	randomPatrolDelay = FMath::RandRange(1.5f, 4.5f);
+	
 	
 }
 
@@ -37,75 +35,8 @@ void ADragon_Toothless::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 
-	switch (dragonState)
-	{
-	case EDragonState::IDLE:
-		Idle(DeltaTime);
-		break;
-	case EDragonState::MOVE:
-		Move();
-		break;
-	case EDragonState::EAT:
-		Eat();
-		break;
-	case EDragonState::STATENICE:
-		StateNice();
-		break;
-	case EDragonState::RETURN:
-		Return();
-		break;
-	case EDragonState::AGGRESSIVE:
-		Aggressive();
-		break;
-	case EDragonState::DIE:
-		Die();
-		break;
-	default:
-		break;
-	}
+	
 
 }
 
-void ADragon_Toothless::Idle(float deltaseconds)
-{
-	if (currentTime > randomPatrolDelay)
-	{
-		dragonState = EDragonState::MOVE;
-		currentTime = 0;
-	}
-	else
-	{
-		currentTime += deltaseconds;
-	}
-}
-
-void ADragon_Toothless::Move()
-{
-
-}
-
-void ADragon_Toothless::Eat()
-{
-
-}
-
-void ADragon_Toothless::StateNice()
-{
-
-}
-
-void ADragon_Toothless::Return()
-{
-
-}
-
-void ADragon_Toothless::Aggressive()
-{
-
-}
-
-void ADragon_Toothless::Die()
-{
-
-}
 

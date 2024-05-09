@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Animation/AnimInstance.h"
-#include "Dragon_Toothless.h"
+#include "DartCharacter.h"
 #include "PetAnimInstance.generated.h"
 
 /**
@@ -17,7 +17,7 @@ class VRTOOTHLESS_API UPetAnimInstance : public UAnimInstance
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "mysettings")
-	class ADragon_Toothless* Dragon;
+	class ADartCharacter* Dragon;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "mysettings")
 	EDragonState currentState;

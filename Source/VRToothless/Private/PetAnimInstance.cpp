@@ -2,13 +2,13 @@
 
 
 #include "PetAnimInstance.h"
-#include "Dragon_Toothless.h"
+#include "DartCharacter.h"
 
 void UPetAnimInstance::NativeUninitializeAnimation()
 {
 	Super::NativeInitializeAnimation();
 
-	Dragon = Cast<ADragon_Toothless>(GetOwningActor());
+	Dragon = Cast<ADartCharacter>(GetOwningActor());
 
 }
 
