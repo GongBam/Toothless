@@ -2,6 +2,7 @@
 
 
 #include "Seoyoung_Actors.h"
+#include "MainWidget.h"
 
 // Sets default values
 ASeoyoung_Actors::ASeoyoung_Actors()
@@ -24,4 +25,6 @@ void ASeoyoung_Actors::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+
+
 

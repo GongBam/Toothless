@@ -3,18 +3,23 @@
 
 #include "MainWidget.h"
 #include "Components/TextBlock.h"
+#include "Components/ProgressBar.h"
 
-// void UMainWidget::ShowMainUI(bool bShow)
-// {
-// 	if (bShow)
-// 	{
-// 		text_currentMoney->SetVisibility(ESlateVisibility::Visible);
-// 		text_currentMoneyText->SetVisibility(ESlateVisibility::Visible);
-// 	}
-// 	else
-// 	{
-// 		text_currentMoney->SetVisibility(ESlateVisibility::Hidden);
-// 		text_currentMoneyText->SetVisibility(ESlateVisibility::Hidden);
-// 	}
-// 
-// }
+
+void UMainWidget::NativeConstruct()
+{
+	Super::NativeConstruct();
+
+
+	FString MoneyString = FString::Printf(TEXT("%d$"), Money);
+	FText moneyText = FText::FromString(MoneyString);
+
+	text_currentMoneyText->SetText(moneyText);
+	
+}
+
+void UMainWidget::SetHappyBar(float value)
+{
+	pb_HappyBar->SetPercent(value);
+	
+}

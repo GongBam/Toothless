@@ -14,11 +14,5 @@ class VRTOOTHLESS_API ADrangonModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
-public:
-
-
-private:
-	int32 Money = 99999999;
-	class UMainWidget* mainUI;
 
 };

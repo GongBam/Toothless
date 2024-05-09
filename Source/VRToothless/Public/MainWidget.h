@@ -16,12 +16,20 @@ class VRTOOTHLESS_API UMainWidget : public UUserWidget
 
 
 public:
+	UPROPERTY(EditAnywhere, Category = "UI", meta = (BindWidget))
+	class UTextBlock* text_currentMoney;
 
-// 	UPROPERTY(EditAnywhere, Category = "VR", meta = (BindWidget))
-// 	class UTextBlock* text_currentMoney;
-// 	UPROPERTY(EditAnywhere, Category = "VR", meta = (BindWidget))
-// 	class UTextBlock* text_currentMoneyText;
-// 
-// 
-// 	void ShowMainUI(bool bShow);
+	UPROPERTY(EditAnywhere, Category = "UI", meta = (BindWidget))
+	class UTextBlock* text_currentMoneyText;
+
+	int32 Money = 99999999;
+
+	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	class UProgressBar* pb_HappyBar;
+
+protected:
+	virtual void NativeConstruct() override;
+
+private:
+	void SetHappyBar(float value);
 };
