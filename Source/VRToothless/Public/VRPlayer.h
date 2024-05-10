@@ -27,22 +27,4 @@ public:
 
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	UPROPERTY(EditAnywhere, Category = "VR")
-	class UInputMappingContext* imc_VRMapping;
-
-	UPROPERTY(EditAnywhere, Category = "VR")
-	class UInputAction* ia_Abutton;
-
-	UFUNCTION()
-	void AButtonMenu();
-
-
-
-
-
-	
-
-
-
-
 };

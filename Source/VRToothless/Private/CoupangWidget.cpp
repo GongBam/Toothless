@@ -7,7 +7,7 @@ void UCoupangWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
 
-	btn_Food1->OnClicked.AddDynamic(this, &UCoupangWidget::BuyC);
+	/*btn_Food1->OnClicked.AddDynamic(this, &UCoupangWidget::BuyC);
 	btn_Water1->OnClicked.AddDynamic(this, &UCoupangWidget::BuyC);
 	btn_Brush1->OnClicked.AddDynamic(this, &UCoupangWidget::BuyC);
 	btn_Shampoo1->OnClicked.AddDynamic(this, &UCoupangWidget::BuyC);
@@ -23,21 +23,23 @@ void UCoupangWidget::NativeConstruct()
 	btn_Water3->OnClicked.AddDynamic(this, &UCoupangWidget::BuyA);
 	btn_Brush3->OnClicked.AddDynamic(this, &UCoupangWidget::BuyA);
 	btn_Shampoo3->OnClicked.AddDynamic(this, &UCoupangWidget::BuyA);
-	btn_Bowl3->OnClicked.AddDynamic(this, &UCoupangWidget::BuyA);
-}
+	btn_Bowl3->OnClicked.AddDynamic(this, &UCoupangWidget::BuyA);*/
 
-void UCoupangWidget::BuyC()
-{
-	wallet->DownMoney(1000);
-}
 
-void UCoupangWidget::BuyB()
-{
-	wallet->DownMoney(3000);
 }
-
-void UCoupangWidget::BuyA()
-{
-	wallet->DownMoney(5000);
-}
-
+//
+//void UCoupangWidget::BuyC()
+//{
+//	wallet->DownMoney(1000);
+//}
+//
+//void UCoupangWidget::BuyB()
+//{
+//	wallet->DownMoney(3000);
+//}
+//
+//void UCoupangWidget::BuyA()
+//{
+//	wallet->DownMoney(5000);
+//}
+//

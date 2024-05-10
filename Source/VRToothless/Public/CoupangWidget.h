@@ -16,7 +16,7 @@ protected:
 	virtual void NativeConstruct() override;
 
 public:
-	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	/*UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
 	class UButton* btn_Food1;
 	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
 	class UButton* btn_Food2;
@@ -46,6 +46,8 @@ public:
 	class UButton* btn_Bowl2;
 	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
 	class UButton* btn_Bowl3;
+	
+	class UWidgetComponent* widgetComp;
 
 	class UMainWidget* wallet;
 
@@ -54,6 +56,6 @@ public:
 	UFUNCTION()
 	void BuyB();
 	UFUNCTION()
-	void BuyA();
+	void BuyA();*/
 	
 };

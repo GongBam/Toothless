@@ -29,7 +29,11 @@ public:
 	class UProgressBar* pb_HappyBar;
 
 	void SetHappyBar(float value);
+
+	UFUNCTION(BlueprintCallable)
 	void DownMoney(int32 Value);
+
+
 
 protected:
 	virtual void NativeConstruct() override;

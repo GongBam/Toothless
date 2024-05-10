@@ -10,7 +10,6 @@ void UMainWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
 
-
 	FString MoneyString = FString::Printf(TEXT("%d$"), Money);
 	FText moneyText = FText::FromString(MoneyString);
 
@@ -23,7 +22,12 @@ void UMainWidget::SetHappyBar(float value)
 	pb_HappyBar->SetPercent(value);
 }
 
-void UMainWidget::DownMoney(int32 Value)
+void UMainWidget::DownMoney(int32 value)
 {
-	Money = Money - Value;
+	Money= Money-value;
+
+	FString MoneyString = FString::Printf(TEXT("%d$"), Money);
+	FText moneyText = FText::FromString(MoneyString);
+
+	text_currentMoneyText->SetText(moneyText);
 }
