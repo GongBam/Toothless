@@ -31,6 +31,22 @@ public:
 
 	int32 currentState = 4;
 
+
+
+	/*
+		Navigation
+	*/
+
+	UPROPERTY()
+	class AAIController* PetController;
+
+	// ¼øÂû ´ë»ó
+	UPROPERTY(EditAnywhere, Category = "Mysettings")
+	AActor* PatrolTarget;
+
+	UPROPERTY(EditAnywhere, Category = "Mysettings")
+	TArray<AActor*> PatrolTargets;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
