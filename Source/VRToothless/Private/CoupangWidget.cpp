@@ -28,16 +28,16 @@ void UCoupangWidget::NativeConstruct()
 
 void UCoupangWidget::BuyC()
 {
-
+	wallet->DownMoney(1000);
 }
 
 void UCoupangWidget::BuyB()
 {
-
+	wallet->DownMoney(3000);
 }
 
 void UCoupangWidget::BuyA()
 {
-
+	wallet->DownMoney(5000);
 }
 

@@ -47,6 +47,8 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
 	class UButton* btn_Bowl3;
 
+	class UMainWidget* wallet;
+
 	UFUNCTION()
 	void BuyC();
 	UFUNCTION()

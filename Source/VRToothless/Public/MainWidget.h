@@ -28,9 +28,11 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
 	class UProgressBar* pb_HappyBar;
 
+	void SetHappyBar(float value);
+	void DownMoney(int32 Value);
+
 protected:
 	virtual void NativeConstruct() override;
 
-private:
-	void SetHappyBar(float value);
+	
 };

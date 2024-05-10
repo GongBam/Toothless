@@ -22,3 +22,8 @@ void UMainWidget::SetHappyBar(float value)
 {
 	pb_HappyBar->SetPercent(value);
 }
+
+void UMainWidget::DownMoney(int32 Value)
+{
+	Money = Money - Value;
+}
