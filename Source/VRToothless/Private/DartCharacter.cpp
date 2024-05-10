@@ -8,6 +8,10 @@
 #include "VRPlayer.h"
 #include "AIController.h"
 #include "PetAnimInstance.h"
+#include "NavigationSystem.h"
+#include "Perception/PawnSensingComponent.h"
+#include <../../../../../../../Source/Runtime/Core/Public/Delegates/Delegate.h>
+#include <../../../../../../../Source/Runtime/AIModule/Classes/Perception/AIPerceptionComponent.h>
 
 
 // Sets default values
@@ -28,12 +32,24 @@ ADartCharacter::ADartCharacter()
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationRoll = false;
 	bUseControllerRotationYaw = false;
+
+	PawnSensing = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("Pawnsensing"));
+	PawnSensing->SightRadius = 250.f;
+	PawnSensing->HearingThreshold = 200.f;
+	PawnSensing->LOSHearingThreshold = 200.f;
+	PawnSensing->SetPeripheralVisionAngle(27.f);
+
+	ActorSensing = CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("ActorSensing"));
 }
 
 // Called when the game starts or when spawned
 void ADartCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	//// 랜덤 패트롤
+	//NavArea = FNavigationSystem::GetCurrent<UNavigationSystemV1>(this);
+	//RandomPatrol();
 
 	// 기본 상태를 idle 상태로 설정 초기화 한다.
 	dragonState = EDragonState::EES_Patrolling;
@@ -59,8 +75,19 @@ void ADartCharacter::BeginPlay()
 		}
 	}
 
+	if (PawnSensing)
+	{
+		PawnSensing->OnSeePawn.AddDynamic(this, &ADartCharacter::PawnSeen);
+	}
+
 
 	randomPatrolDelay = FMath::RandRange(1.5f, 4.5f);
+
+}
+
+void ADartCharacter::PawnSeen(APawn* SeenActor)
+{
+	UE_LOG(LogTemp, Warning, TEXT("Pawn seen!!!"));
 
 }
 
@@ -157,5 +184,18 @@ void ADartCharacter::Aggressive()
 
 void ADartCharacter::Die()
 {
+
+}
+
+void ADartCharacter::RandomPatrol()
+{
+	if (NavArea)
+	{
+		NavArea->K2_GetRandomReachablePointInRadius(GetWorld(), GetActorLocation(),
+			RandomLocation, 15000.0f);
+
+		//movetolocation(RandomLocation);
+
+	}
 
 }

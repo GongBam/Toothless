@@ -8,7 +8,7 @@ public class VRToothless : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" ,"EnhancedInput", "AIModule" , "Niagara" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" ,"EnhancedInput", "AIModule" , "Niagara" , "NavigationSystem" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

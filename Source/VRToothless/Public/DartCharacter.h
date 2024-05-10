@@ -6,6 +6,10 @@
 #include "GameFramework/Character.h"
 #include "DartCharacter.generated.h"
 
+
+class UPawnSensingComponent;
+class UAIPerceptionComponent;
+
 UENUM(BlueprintType)
 enum class EDragonState : uint8
 {
@@ -41,7 +45,7 @@ public:
 	class AAIController* PetController;
 
 	// 순찰 대상
-	UPROPERTY(EditAnywhere, Category = "Mysettings")
+	UPROPERTY(EditAnywhere, Category = "Mysettings" , BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
 	AActor* PatrolTarget;
 
 	UPROPERTY(EditAnywhere, Category = "Mysettings")
@@ -50,6 +54,12 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	// 센서를 통해 액터 주시
+	UFUNCTION()
+	void PawnSeen(APawn* SeenActor);
+
+
 
 	
 
@@ -74,25 +84,37 @@ private:
 	UPROPERTY()
 	class AActor* target;
 
+	// components
 	
-	
+	UPROPERTY(VisibleAnywhere)
+	UPawnSensingComponent* PawnSensing;
+
+	UPROPERTY(VisibleAnywhere)
+	UAIPerceptionComponent* ActorSensing;
+
 	//class AVRPlayer* player;
 
 	float currentTime = 3;
 
-
+	UFUNCTION(BlueprintCallable)
 	void Idle(float deltaseconds);
 	void Move(float deltaseconds);
 	void Patrolling();
+	UFUNCTION(BlueprintCallable)
 	void Eat();
 	void StateNice();
 	void Return();
 	void Aggressive();
 	void Die();
+	void RandomPatrol();
 
 	float randomPatrolDelay = 3;
 
 	UPROPERTY()
 	class AAIController* EnemyController;
+
+	class UNavigationSystemV1* NavArea;
+
+	FVector RandomLocation;
 	
 };
