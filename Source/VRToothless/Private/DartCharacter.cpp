@@ -1,12 +1,14 @@
-
+// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "DartCharacter.h"
 #include "Components/BoxComponent.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include "VRPlayer.h"
 #include "AIController.h"
 #include "PetAnimInstance.h"
+
 
 // Sets default values
 ADartCharacter::ADartCharacter()
@@ -21,6 +23,11 @@ ADartCharacter::ADartCharacter()
 	mesh1->SetupAttachment(boxComp);*/
 
 	EnemyController = Cast<AAIController>(GetController());
+
+	GetCharacterMovement()->bOrientRotationToMovement = true;
+	bUseControllerRotationPitch = false;
+	bUseControllerRotationRoll = false;
+	bUseControllerRotationYaw = false;
 }
 
 // Called when the game starts or when spawned
@@ -35,6 +42,23 @@ void ADartCharacter::BeginPlay()
 	{
 		target = *player;
 	}*/
+
+	PetController = Cast<AAIController>(GetController());
+	if (PetController && PatrolTarget)
+	{
+		FAIMoveRequest MoveRequest;
+		MoveRequest.SetGoalActor(PatrolTarget);
+		MoveRequest.SetAcceptanceRadius(15.f);
+		FNavPathSharedPtr navPath;
+		PetController->MoveTo(MoveRequest, &navPath);
+		TArray<FNavPathPoint>& Pathpoints = navPath->GetPathPoints();
+		for (auto& Point : Pathpoints)
+		{
+			const FVector& Location = Point.Location;
+			DrawDebugSphere(GetWorld(), Location, 12.f, 12, FColor::Green, false, 10.f);
+		}
+	}
+
 
 	randomPatrolDelay = FMath::RandRange(1.5f, 4.5f);
 
@@ -87,7 +111,7 @@ void ADartCharacter::Idle(float deltaseconds)
 	currentTime += deltaseconds;
 	if (currentTime > 5.0f)
 	{
-		
+
 		currentTime = 0;
 		dragonState = EDragonState::MOVE;
 	}
@@ -102,7 +126,7 @@ void ADartCharacter::Move(float deltaseconds)
 		currentTime = 0;
 		dragonState = EDragonState::IDLE;
 	}
-	
+
 }
 
 void ADartCharacter::Patrolling()
@@ -135,4 +159,3 @@ void ADartCharacter::Die()
 {
 
 }
-
