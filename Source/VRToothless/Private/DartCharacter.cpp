@@ -129,6 +129,21 @@ void ADartCharacter::Tick(float DeltaTime)
 
 }
 
+void ADartCharacter::BangAnim()
+{
+	PlayAnimMontage(Bang_Montage, 1);
+}
+
+void ADartCharacter::SitAnim()
+{
+	PlayAnimMontage(Wait_Montage, 1);
+}
+
+void ADartCharacter::FlyAnim()
+{
+	PlayAnimMontage(Fly_Montage, 1);
+}
+
 void ADartCharacter::Idle(float deltaseconds)
 {
 

@@ -51,6 +51,15 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Mysettings")
 	TArray<AActor*> PatrolTargets;
 
+	UPROPERTY(EditAnywhere, Category= "VR")
+	class UAnimMontage* Bang_Montage;
+
+	UPROPERTY(EditAnywhere, Category = "VR")
+	class UAnimMontage* Wait_Montage;
+
+	UPROPERTY(EditAnywhere, Category = "VR")
+	class UAnimMontage* Fly_Montage;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -77,6 +86,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mysettings")
 	EDragonState dragonState = EDragonState::EES_Patrolling;
 
+	void BangAnim();
+	void SitAnim();
+	void FlyAnim();
 	
 
 private:
@@ -105,8 +117,8 @@ private:
 	void StateNice();
 	void Return();
 	void Aggressive();
-	void Die();
 	void RandomPatrol();
+	void Die();
 
 	float randomPatrolDelay = 3;
 
@@ -116,5 +128,8 @@ private:
 	class UNavigationSystemV1* NavArea;
 
 	FVector RandomLocation;
+
+
+
 	
 };
