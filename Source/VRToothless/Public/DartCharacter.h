@@ -60,6 +60,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "VR")
 	class UAnimMontage* Fly_Montage;
 
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "VR")
+	FVector foodeat;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
