@@ -28,11 +28,13 @@ public:
 	
 	
 
-	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
+	UPROPERTY(VisibleAnywhere,BlueprintReadWrite ,Category = "UI", meta = (BindWidget))
 	class UProgressBar* pb_HappyBar;
 
-	UPROPERTY(BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category ="UI")
 	float HappyPoint=50.0f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category ="UI")
 	float MaxHappyPoint=100.0f;
 	
 

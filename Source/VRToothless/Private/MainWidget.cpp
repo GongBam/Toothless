@@ -14,7 +14,7 @@ void UMainWidget::NativeConstruct()
 	FText moneyText = FText::FromString(MoneyString);
 
 	text_currentMoneyText->SetText(moneyText);
-	pb_HappyBar->SetPercent(HappyPoint/MaxHappyPoint);
+	//pb_HappyBar->SetPercent(HappyPoint/MaxHappyPoint);
 }
 
 
