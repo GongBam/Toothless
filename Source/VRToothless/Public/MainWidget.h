@@ -31,7 +31,8 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
 	class UProgressBar* pb_HappyBar;
 
-	float HappyPoint=10.0f;
+
+	float HappyPoint=0.0f;
 	float MaxHappyPoint=100.0f;
 	
 
