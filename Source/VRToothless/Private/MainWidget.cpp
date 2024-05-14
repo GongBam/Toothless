@@ -14,13 +14,11 @@ void UMainWidget::NativeConstruct()
 	FText moneyText = FText::FromString(MoneyString);
 
 	text_currentMoneyText->SetText(moneyText);
-	
+	pb_HappyBar->SetPercent(HappyPoint/MaxHappyPoint);
 }
 
-void UMainWidget::SetHappyBar(float value)
-{
-	pb_HappyBar->SetPercent(value);
-}
+
+
 
 void UMainWidget::DownMoney(int32 value)
 {
