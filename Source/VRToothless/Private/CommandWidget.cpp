@@ -5,7 +5,7 @@
 #include "Components/Button.h"
 #include "Kismet/GameplayStatics.h"
 #include "DartCharacter.h"
-#include <../../../../../../../Source/Runtime/Engine/Public/EngineUtils.h>
+#include "EngineUtils.h"
 
 
 
@@ -13,42 +13,37 @@
 
 void UCommandWidget::NativeConstruct()
 {
-
-	//먹이 주기 버튼 누르면 Sit 함수를 실행한다.
-	Button_31->OnClicked.AddDynamic(this, &UCommandWidget::Sit);
-	
-	//물 주기 버튼 누르면 Fly 함수를 실행한다.
-	FlyButton->OnClicked.AddDynamic(this, &UCommandWidget::Fly);
-
-	//놀아 주기 버튼 누르면 Bang 함수를 실행한다.
-	BangButton->OnClicked.AddDynamic(this, &UCommandWidget::Bang);
-
-	//돌아가기 버튼을 실행한다.
-	ReturnButton->OnClicked.AddDynamic(this, &UCommandWidget::ReturnMenu);
-
 	for (TActorIterator<ADartCharacter> it(GetWorld()); it; ++it)
 	{
 		dragon = *it;
 	}
 
+	btn_sit->OnClicked.AddDynamic(this, &UCommandWidget::Sit);
+	btn_bang->OnClicked.AddDynamic(this, &UCommandWidget::Bang);
+	btn_fly->OnClicked.AddDynamic(this, &UCommandWidget::Fly);
+	btn_return->OnClicked.AddDynamic(this, &UCommandWidget::ReturnMenu);
+
 }
 
 void UCommandWidget::Sit()
 {
-	dragon->BangAnim();
+	dragon->SitAnim();
+	UE_LOG(LogTemp, Warning, TEXT("1"));
 }
 
 void UCommandWidget::Fly()
 {
-	
+	dragon->FlyAnim();
+	UE_LOG(LogTemp, Warning, TEXT("2"));
 }
 
 void UCommandWidget::Bang()
 {
-	
+	dragon->BangAnim();
+	UE_LOG(LogTemp, Warning, TEXT("3"));
 }
 
 void UCommandWidget::ReturnMenu()
 {
-	
+	UE_LOG(LogTemp, Warning, TEXT("4"));
 }

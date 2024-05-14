@@ -19,17 +19,19 @@ protected:
 virtual void NativeConstruct() override;
 
 public:
-	UPROPERTY(EditDefaultsOnly, Category = "VR")
-	class UButton* Button_31;
 
-	UPROPERTY(EditDefaultsOnly, Category= "VR")
-	class UButton* FlyButton;
+	UPROPERTY(EditDefaultsOnly, Category = "VR", meta = (BindWidget))
+	class UButton* btn_sit;
 
-	UPROPERTY(EditDefaultsOnly, Category ="VR")
-	class UButton* BangButton;
+	UPROPERTY(EditDefaultsOnly, Category = "VR", meta = (BindWidget))
+	class UButton* btn_bang;
 
-	UPROPERTY(EditDefaultsOnly, Category = "VR")
-	class UButton* ReturnButton;
+	UPROPERTY(EditDefaultsOnly, Category = "VR", meta = (BindWidget))
+	class UButton* btn_fly;
+
+	UPROPERTY(EditDefaultsOnly, Category = "VR", meta =(BindWidget))
+	class UButton* btn_return;
+
 
 	class ADartCharacter* dragon;
 
