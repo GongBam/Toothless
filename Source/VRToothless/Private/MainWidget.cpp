@@ -19,7 +19,6 @@ void UMainWidget::NativeConstruct()
 
 
 
-
 void UMainWidget::DownMoney(int32 value)
 {
 	Money= Money-value;

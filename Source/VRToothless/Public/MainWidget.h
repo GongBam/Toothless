@@ -31,8 +31,8 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "UI", meta = (BindWidget))
 	class UProgressBar* pb_HappyBar;
 
-
-	float HappyPoint=0.0f;
+	UPROPERTY(BlueprintReadWrite)
+	float HappyPoint=50.0f;
 	float MaxHappyPoint=100.0f;
 	
 
@@ -43,6 +43,7 @@ public:
 
 protected:
 	virtual void NativeConstruct() override;
+
 
 
 	
