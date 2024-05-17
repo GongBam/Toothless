@@ -30,6 +30,9 @@ public:
 	class UButton* btn_fly;
 
 	UPROPERTY(EditDefaultsOnly, Category = "VR", meta =(BindWidget))
+	class UButton* btn_come;
+
+	UPROPERTY(EditDefaultsOnly, Category = "VR", meta =(BindWidget))
 	class UButton* btn_return;
 
 
@@ -46,6 +49,9 @@ private:
 
 	UFUNCTION(BlueprintCallable)
 	void Bang();
+
+	UFUNCTION(BlueprintCallable)
+	void Comeon();
 
 	UFUNCTION(BlueprintCallable)
 	void ReturnMenu();

@@ -21,6 +21,7 @@ void UCommandWidget::NativeConstruct()
 	btn_sit->OnClicked.AddDynamic(this, &UCommandWidget::Sit);
 	btn_bang->OnClicked.AddDynamic(this, &UCommandWidget::Bang);
 	btn_fly->OnClicked.AddDynamic(this, &UCommandWidget::Fly);
+	btn_come->OnClicked.AddDynamic(this, &UCommandWidget::Comeon);
 	btn_return->OnClicked.AddDynamic(this, &UCommandWidget::ReturnMenu);
 
 }
@@ -41,6 +42,11 @@ void UCommandWidget::Bang()
 {
 	dragon->BangAnim();
 	UE_LOG(LogTemp, Warning, TEXT("3"));
+}
+
+void UCommandWidget::Comeon()
+{
+	UE_LOG(LogTemp, Warning, TEXT("5"));
 }
 
 void UCommandWidget::ReturnMenu()
