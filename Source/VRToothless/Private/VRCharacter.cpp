@@ -51,9 +51,10 @@ void AVRCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 void AVRCharacter::OnIAMove(const FInputActionValue& value)
 {
-	FVector2D v = value.Get<FVector2D>();
+	FVector v = value.Get<FVector>();
 
 	AddMovementInput(GetActorForwardVector(), v.Y);
 	AddMovementInput(GetActorRightVector(), v.X);
+	AddMovementInput(GetActorUpVector(), v.Z);
 }
 
