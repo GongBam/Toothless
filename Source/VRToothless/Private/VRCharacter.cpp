@@ -55,6 +55,5 @@ void AVRCharacter::OnIAMove(const FInputActionValue& value)
 
 	AddMovementInput(GetActorForwardVector(), v.Y);
 	AddMovementInput(GetActorRightVector(), v.X);
-	AddMovementInput(GetActorUpVector(), v.Z);
 }
 
