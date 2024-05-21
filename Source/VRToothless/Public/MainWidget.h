@@ -32,7 +32,7 @@ public:
 	class UProgressBar* pb_HappyBar;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category ="UI")
-	float HappyPoint=50.0f;
+	float HappyPoint=20.0f;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category ="UI")
 	float MaxHappyPoint=100.0f;
